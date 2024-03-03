@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/users', function () {
+    return view('users.user');
+});
+Route::get('/groups','App\Http\Controllers\UsersGroupsController@index');
+Route::get('/groups/create','App\Http\Controllers\UsersGroupsController@create');
+Route::post('/groups','App\Http\Controllers\UsersGroupsController@store');
+Route::delete('/groups/{id}','App\Http\Controllers\UsersGroupsController@destroy');
+
+
+Route::resource('users', 'App\Http\Controllers\UsersController');
