@@ -26,3 +26,4 @@ Route::delete('/groups/{id}','App\Http\Controllers\UsersGroupsController@destroy
 
 
 Route::resource('users', 'App\Http\Controllers\UsersController');
+Route::resource('categories', 'App\Http\Controllers\CategoriesController');

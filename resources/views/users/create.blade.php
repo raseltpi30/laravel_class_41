@@ -10,17 +10,26 @@
     </div>  
 @endif
 @if (isset($user))
-    <h2 class="m-0 font-weight-bold text-primary">Update user information</h2>
+    <div class="row clearfix">
+        <div class="col-md-6">
+            <h2 class="h3 mb-4 text-gray-800">Update user information</h2>  
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="{{ url('users')}}" class="btn btn-primary"><i class="fa fa-reply mr-1"></i>Back</a> 
+        </div>
+    </div>
 @else
-    <h2 class="m-0 font-weight-bold text-primary">Add New user</h2>
+<div class="row clearfix">
+    <div class="col-md-6">
+        <h2 class="h3 mb-4 text-gray-800">Add New User</h2>  
+    </div>
+    <div class="col-md-6 text-right">
+        <a href="{{ url('users')}}" class="btn btn-primary"><i class="fa fa-reply mr-1"></i>Back</a> 
+    </div>
+</div>
 @endif
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        @if (isset($user))
-            <h3 class="m-0 font-weight-bold text-primary">Update user</h3>
-        @else
-            <h3 class="m-0 font-weight-bold text-primary">New user</h3>
-        @endif
         <div class="row">
             <div class="col-md-6 offset-md-3 mt-5">
                 <div class="card card-body shadow">
@@ -32,7 +41,7 @@
                         <div class="mb-3">
                             <div class="mb-3">
                                 <label for="group" class="form-label">Select Group :</label>
-                                {{ Form::select('group_id',$groups,NULL,['class' => 'form-control' , 'id' => 'group', 'placeholder' => 'Enter Customer Name'])}}
+                                {{ Form::select('group_id',$groups,NULL,['class' => 'form-control' , 'id' => 'group', 'placeholder' => 'Select Group'])}}
                             </div>
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name :</label>
@@ -43,17 +52,16 @@
                                 {{ Form::email('email',NULL, ['class' => 'form-control' , 'id' => 'email' , 'placeholder' => 'Enter Customer Email'])}}
                             </div>                            
                             <div class="mb-3">
-                                <label for="phone" class="form-label">user phone :</label>
+                                <label for="phone" class="form-label">Phone Number :</label>
                                 {{ Form::number('phone',NULL, ['class' => 'form-control' , 'id' => 'phone' , 'placeholder' => 'Enter Customer Phone'])}}
                             </div>
                             <div class="mb-3">
-                                <label for="address" class="form-label">user address :</label>
+                                <label for="address" class="form-label">Address :</label>
                                 {{ Form::text('address',NULL, ['class' => 'form-control' , 'id' => 'address' , 'placeholder' => 'Enter Customer Address'])}}
-                            </div>
+                            </div>                            
                             <div class="mb-3">
-                                <label for="password" class="form-label">user password :</label>
+                                <label for="password" class="form-label">Password :</label>
                                 {{ Form::password('password',['class' => 'form-control' , 'id' => 'password' , 'placeholder' => 'Enter Customer Password'])}}
-
                             </div>
                             <div class="mb-3">
                                 <input type="submit" name="add_user" class="btn btn-success" value="Add user">
