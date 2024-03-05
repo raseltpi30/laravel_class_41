@@ -34,7 +34,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::delete('/groups/{id}','App\Http\Controllers\UsersGroupsController@destroy');
     
     Route::resource('users', 'App\Http\Controllers\UsersController');
-    Route::get('users\{id}\sales', 'App\Http\Controllers\UserSaleController@index')->name('user.sale');
+    Route::get('users/{id}/sales', 'App\Http\Controllers\UserSaleController@index')->name('user.sales');
+    Route::get('users/{id}/purchase', 'App\Http\Controllers\UserPurchaseController@index')->name('user.purchases');
+    Route::get('users/{id}/payment', 'App\Http\Controllers\UserPaymentController@index')->name('user.payments');
+    Route::get('users/{id}/receipt', 'App\Http\Controllers\UserReceiptController@index')->name('user.receipts');
 
 
 
