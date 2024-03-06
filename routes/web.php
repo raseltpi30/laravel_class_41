@@ -38,6 +38,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('users/{id}/purchase', 'App\Http\Controllers\UserPurchaseController@index')->name('user.purchases');
     Route::get('users/{id}/payment', 'App\Http\Controllers\UserPaymentController@index')->name('user.payments');
     Route::get('users/{id}/receipt', 'App\Http\Controllers\UserReceiptController@index')->name('user.receipts');
+    Route::post('users/{id}/payments', 	'App\Http\Controllers\UserPaymentController@store')->name('user.payments.store');
+    Route::delete('users/{id}/payments/{payment_id}','App\Http\Controllers\UserPaymentController@destroy')->name('user.payments.destroy');
 
 
 
